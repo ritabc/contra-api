@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_28_175519) do
+ActiveRecord::Schema.define(version: 2018_09_28_185700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 2018_09_28_175519) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "possible_move_start_positions", force: :cascade do |t|
+    t.bigint "position_id"
+    t.bigint "move_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["move_id"], name: "index_possible_move_start_positions_on_move_id"
+    t.index ["position_id"], name: "index_possible_move_start_positions_on_position_id"
   end
 
   add_foreign_key "dance_moves", "positions", column: "ending_position_id"

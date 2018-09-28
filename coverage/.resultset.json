@@ -7,6 +7,7 @@
         1,
         2,
         2,
+        2,
         null
       ],
       "/Users/rita/Documents/Epicodus/capstone/contra-rails/spec/rails_helper.rb": [
@@ -252,7 +253,7 @@
         null,
         null,
         1,
-        1,
+        2,
         null,
         null,
         null,
@@ -260,12 +261,27 @@
         null,
         null
       ],
-      "/Users/rita/Documents/Epicodus/capstone/contra-rails/config/routes.rb": [
+      "/Users/rita/Documents/Epicodus/capstone/contra-rails/app/channels/application_cable/channel.rb": [
+        1,
         1,
         null,
         null
       ],
-      "/Users/rita/Documents/Epicodus/capstone/contra-rails/app/models/dance_move.rb": [
+      "/Users/rita/Documents/Epicodus/capstone/contra-rails/app/channels/application_cable/connection.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/rita/Documents/Epicodus/capstone/contra-rails/app/controllers/application_controller.rb": [
+        1,
+        null
+      ],
+      "/Users/rita/Documents/Epicodus/capstone/contra-rails/app/jobs/application_job.rb": [
+        1,
+        null
+      ],
+      "/Users/rita/Documents/Epicodus/capstone/contra-rails/app/mailers/application_mailer.rb": [
         1,
         1,
         1,
@@ -276,6 +292,45 @@
         1,
         null
       ],
+      "/Users/rita/Documents/Epicodus/capstone/contra-rails/app/models/dance.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/rita/Documents/Epicodus/capstone/contra-rails/app/models/dance_move.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/rita/Documents/Epicodus/capstone/contra-rails/app/models/move.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/rita/Documents/Epicodus/capstone/contra-rails/app/models/position.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/rita/Documents/Epicodus/capstone/contra-rails/app/models/possible_move_start_position.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/rita/Documents/Epicodus/capstone/contra-rails/config/routes.rb": [
+        1,
+        null,
+        null
+      ],
       "/Users/rita/Documents/Epicodus/capstone/contra-rails/spec/models/dance_spec.rb": [
         1,
         null,
@@ -283,26 +338,37 @@
         2,
         null
       ],
-      "/Users/rita/Documents/Epicodus/capstone/contra-rails/app/models/dance.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
       "/Users/rita/Documents/Epicodus/capstone/contra-rails/spec/models/move_spec.rb": [
         1,
         null,
         1,
         2,
+        2,
         null
       ],
-      "/Users/rita/Documents/Epicodus/capstone/contra-rails/app/models/move.rb": [
+      "/Users/rita/Documents/Epicodus/capstone/contra-rails/spec/models/position_spec.rb": [
         1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
+        2,
+        2,
+        null
+      ],
+      "/Users/rita/Documents/Epicodus/capstone/contra-rails/spec/models/possible_move_start_position_spec.rb": [
         1,
+        null,
+        1,
+        2,
+        2,
         null
       ]
     },
-    "timestamp": 1538157078
+    "timestamp": 1538163326
   }
 }
