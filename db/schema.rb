@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_28_173340) do
+ActiveRecord::Schema.define(version: 2018_09_28_175519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2018_09_28_173340) do
     t.integer "number_in_dance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "ending_position_id"
     t.index ["dance_id"], name: "index_dance_moves_on_dance_id"
     t.index ["move_id"], name: "index_dance_moves_on_move_id"
   end
@@ -39,4 +40,11 @@ ActiveRecord::Schema.define(version: 2018_09_28_173340) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "positions", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "dance_moves", "positions", column: "ending_position_id"
 end
