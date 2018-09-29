@@ -77,13 +77,13 @@ class Seed
     ## Should be alphabetical
     moves = %w(
       balance_the_ring
-      petronella
-      neighbor_swing
-      dancers_on_left_right_shoulder_round_once_and_a_half
-      partner_swing
-      circle_left_three_quarters
-      partner_balance
       california_twirl
+      circle_left_three_quarters
+      dancers_on_left_right_shoulder_round_once_and_a_half
+      neighbor_swing
+      partner_balance
+      partner_swing
+      petronella
     )
 
     moves.each do |move_name|
@@ -118,7 +118,7 @@ class Seed
 
   end
 
-  def populate_data_for_heartbeat_contra
+  def populate_dance_move_data_for_heartbeat_contra
     dance = Dance.create!(name: 'Heartbeat Contra', writer: 'Don Flaherty', is_becket: false)
     dance_moves_and_ending_positions = [ ## this needs to be an array so I can use the index to update number_in_dance
       {'balance_the_ring' => 'improper'},
