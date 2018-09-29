@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  ## We want routes for
+    ## - getting next possible moves
+    ## - getting information on a dance
+    ## - saving a dance
+
+    get 'next-moves' => 'moves#available_next'
+
 end
