@@ -5,12 +5,13 @@
 ## Positions still need short lines down the hall positions, probably others too
 
 class Seed
+
   def self.begin
     seed = Seed.new
     seed.populate_all_positions
-    seed.populate_moves_for_heartbeat_contra
+    seed.populate_moves
     seed.populate_possible_move_start_positions
-    seed.populate_ending_positions_for_heartbeat_contra
+    seed.populate_dance_move_data_for_heartbeat_contra
   end
 
   def populate_all_positions
@@ -126,7 +127,7 @@ class Seed
       {'balance_the_ring' => 'opposite_becket'},
       {'petronella' => 'improper_progressed'},
       {'balance_the_ring' => 'improper_progressed'},
-      {'neighbor_swing' => 'side_of_set_with_neighbor_ones_facing_down}',
+      {'neighbor_swing' => 'side_of_set_with_neighbor_ones_facing_down'},
       {'dancers_on_left_right_shoulder_round_once_and_a_half' => 'opposite_becket'},
       {'partner_swing' => 'opposite_becket'},
       {'circle_left_three_quarters' => 'improper_progressed'},
@@ -140,7 +141,7 @@ class Seed
 
       dance_move = DanceMove.create!(
         dance_id: dance.id,
-        move_id: move.id
+        move_id: move.id,
         number_in_dance: index
       )
 
@@ -160,6 +161,7 @@ class Seed
       end
     end
   end
+  
 end
 
 Seed.begin
