@@ -72,10 +72,11 @@ class Seed
 
   def populate_moves_for_heartbeat_contra
     dance = Dance.create!(name: 'Heartbeat Contra', writer: 'Don Flaherty', is_becket: false)
-    moves = %w(balance_the_ring
+    moves = %w(
+      balance_the_ring
       petronella
       neighbor_swing
-      dancers_on_left_right_shoulder_round_one_and_a_half
+      dancers_on_left_right_shoulder_round_once_and_a_half
       partner_swing
       circle_left_three_quarters
       partner_balance
@@ -101,7 +102,7 @@ class Seed
 
         'neighbor_swing' => %w(improper improper_progressed side_of_set_with_neighbor_ones_facing_up side_of_set_with_neighbor_ones_facing_down),
 
-        'dancers_on_left_right_shoulder_round_one_and_a_half' => %w(improper improper_progressed becket opposite_becket side_of_set_with_neighbor_ones_facing_up side_of_set_with_neighbor_ones_facing_down long_lines_larks_facing_in_positive_slope_partner_on_same_side_ones_on_right long_lines_larks_facing_in_positive_slope_partner_on_same_side_ones_on_left long_lines_larks_facing_in_positive_slope_neighbor_on_same_side_ones_near_top long_lines_larks_facing_in_positive_slope_neighbor_on_same_side_ones_near_bottom long_lines_ravens_facing_in_positive_slope_partner_on_same_side_ones_on_right long_lines_ravens_facing_in_positive_slope_partner_on_same_side_ones_on_left long_lines_ravens_facing_in_positive_slope_neighbor_on_same_side_ones_near_top long_lines_ravens_facing_in_positive_slope_neighbor_on_same_side_ones_near_bottom),
+        'dancers_on_left_right_shoulder_round_once_and_a_half' => %w(improper improper_progressed becket opposite_becket side_of_set_with_neighbor_ones_facing_up side_of_set_with_neighbor_ones_facing_down long_lines_larks_facing_in_positive_slope_partner_on_same_side_ones_on_right long_lines_larks_facing_in_positive_slope_partner_on_same_side_ones_on_left long_lines_larks_facing_in_positive_slope_neighbor_on_same_side_ones_near_top long_lines_larks_facing_in_positive_slope_neighbor_on_same_side_ones_near_bottom long_lines_ravens_facing_in_positive_slope_partner_on_same_side_ones_on_right long_lines_ravens_facing_in_positive_slope_partner_on_same_side_ones_on_left long_lines_ravens_facing_in_positive_slope_neighbor_on_same_side_ones_near_top long_lines_ravens_facing_in_positive_slope_neighbor_on_same_side_ones_near_bottom),
 
         'partner_swing' => %w(becket opposite_becket long_lines_larks_facing_in_negative_slope_partner_on_same_side_ones_on_right long_lines_larks_facing_in_negative_slope_partner_on_same_side_ones_on_left long_lines_larks_facing_in_positive_slope_partner_on_same_side_ones_on_right long_lines_larks_facing_in_positive_slope_partner_on_same_side_ones_on_left long_lines_ravens_facing_in_negative_slope_partner_on_same_side_ones_on_right long_lines_ravens_facing_in_negative_slope_partner_on_same_side_ones_on_left long_lines_ravens_facing_in_positive_slope_partner_on_same_side_ones_on_right long_lines_ravens_facing_in_positive_slope_partner_on_same_side_ones_on_left short_wavy_lines_ravens_in_middle_ones_on_right short_wavy_lines_ravens_in_middle_ones_on_left short_wavy_lines_larks_in_middle_ones_on_right short_wavy_lines_larks_in_middle_ones_on_left short_wavy_lines_r_orient_ones_on_left_raven_one_facing_up        short_wavy_lines_r_orient_ones_on_left_raven_one_facing_down        short_wavy_lines_r_orient_ones_on_right_raven_one_facing_down        short_wavy_lines_r_orient_ones_on_right_raven_one_facing_down       short_wavy_lines_s_orient_ones_on_left_raven_one_facing_up short_wavy_lines_s_orient_ones_on_left_raven_one_facing_down short_wavy_lines_s_orient_ones_on_right_raven_one_facing_down short_wavy_lines_s_orient_ones_on_right_raven_one_facing_down),
 
@@ -121,6 +122,20 @@ class Seed
     end
 
     def populate_ending_positions_for_heartbeat_contra
+      dance_moves_and_ending_positions = {
+        'balance_the_ring' => 'improper',
+        'petronella' => 'opposite_becket',
+        'balance_the_ring' => 'opposite_becket',
+        'petronella' => 'improper_progressed',
+        'balance_the_ring' => 'improper_progressed',
+        'neighbor_swing' => 'side_of_set_with_neighbor_ones_facing_down',
+        'dancers_on_left_right_shoulder_round_once_and_a_half' => 'opposite_becket',
+        'partner_swing' => 'opposite_becket',
+        'circle_left_three_quarters' => 'improper_progressed',
+        'balance_the_ring' => 'improper_progressed',
+        'california_twirl' => 'improper'
+      }
+
     end
 
 end
