@@ -12,6 +12,7 @@ class Seed
   end
 
   def populate_all_positions ## r-orient refers to rightmost person facing up, s-orient refers to rightmost person facing down (shape of short wavy line shaped like R or S)
+    ## negative_slope refers to a h4 group in long_lines making a \ shape, positive_slope refers to a h4 group in long_lines making a / shape
     positions = %w(
       improper
       improper_progressed
@@ -20,23 +21,23 @@ class Seed
       side_of_set_with_neighbor_ones_facing_up
       side_of_set_with_neighbor_ones_facing_down
 
-      long_lines_larks_facing_in_partner_on_same_side_ones_on_right
-      long_lines_larks_facing_in_partner_on_same_side_ones_on_left
-      long_lines_larks_facing_in_neighbor_on_same_side_ones_facing_down
-      long_lines_larks_facing_in_neighbor_on_same_side_ones_facing_up
-      long_lines_ravens_facing_in_partner_on_same_side_ones_on_right
-      long_lines_ravens_facing_in_partner_on_same_side_ones_on_left
-      long_lines_ravens_facing_in_neighbor_on_same_side_ones_facing_down
-      long_lines_ravens_facing_in_neighbor_on_same_side_ones_facing_up
+      long_lines_larks_facing_in_negative_slope_partner_on_same_side_ones_on_right
+      long_lines_larks_facing_in_negative_slope_partner_on_same_side_ones_on_left
+      long_lines_larks_facing_in_negative_slope_neighbor_on_same_side_ones_near_top
+      long_lines_larks_facing_in_negative_slope_neighbor_on_same_side_ones_near_bottom
+      long_lines_larks_facing_in_positive_slope_partner_on_same_side_ones_on_right
+      long_lines_larks_facing_in_positive_slope_partner_on_same_side_ones_on_left
+      long_lines_larks_facing_in_positive_slope_neighbor_on_same_side_ones_near_top
+      long_lines_larks_facing_in_positive_slope_neighbor_on_same_side_ones_near_bottom
 
-      long_lines_larks_facing_in_partner_on_same_side_ones_on_right
-      long_lines_larks_facing_in_partner_on_same_side_ones_on_left
-      long_lines_larks_facing_in_neighbor_on_same_side_ones_facing_down
-      long_lines_larks_facing_in_neighbor_on_same_side_ones_facing_up
-      long_lines_ravens_facing_in_partner_on_same_side_ones_on_right
-      long_lines_ravens_facing_in_partner_on_same_side_ones_on_left
-      long_lines_ravens_facing_in_neighbor_on_same_side_ones_facing_down
-      long_lines_ravens_facing_in_neighbor_on_same_side_ones_facing_up
+      long_lines_ravens_facing_in_negative_slope_partner_on_same_side_ones_on_right
+      long_lines_ravens_facing_in_negative_slope_partner_on_same_side_ones_on_left
+      long_lines_ravens_facing_in_negative_slope_neighbor_on_same_side_ones_near_top
+      long_lines_ravens_facing_in_negative_slope_neighbor_on_same_side_ones_near_bottom
+      long_lines_ravens_facing_in_positive_slope_partner_on_same_side_ones_on_right
+      long_lines_ravens_facing_in_positive_slope_partner_on_same_side_ones_on_left
+      long_lines_ravens_facing_in_positive_slope_neighbor_on_same_side_ones_near_top
+      long_lines_ravens_facing_in_positive_slope_neighbor_on_same_side_ones_near_bottom
 
       short_wavy_lines_ravens_in_middle_ones_on_right
       short_wavy_lines_ravens_in_middle_ones_on_left
@@ -46,6 +47,7 @@ class Seed
       short_wavy_lines_larks_in_middle_ones_on_left
       short_wavy_lines_larks_in_middle_ones_facing_down
       short_wavy_lines_larks_in_middle_ones_facing_up
+
       short_wavy_lines_r_orient_ones_in_middle_raven_one_facing_down
       short_wavy_lines_r_orient_ones_in_middle_raven_one_facing_up
       short_wavy_lines_r_orient_ones_on_outside_raven_one_facing_up
@@ -94,10 +96,22 @@ class Seed
       ## for heartbeat contra moves
       moves_and_possible_start_positions = {
         'balance_the_ring' => %w(improper improper_progressed becket opposite_becket side_of_set_with_neighbor_ones_facing_up side_of_set_with_neighbor_ones_facing_down),
+
         'petronella' => %w(improper improper_progressed becket opposite_becket side_of_set_with_neighbor_ones_facing_up side_of_set_with_neighbor_ones_facing_down),
-        'neighbor_swing' => %w(improper improper_progressed side_of_set_with_neighbor_ones_facing_up, side_of_set_with_neighbor_ones_facing_down)
-        'dancers_on_right_left_shoulder_round_one_and_a_half' => %w(improper improper_progressed becket opposite_becket side_of_set_with_neighbor_ones_facing_up side_of_set_with_neighbor_ones_facing_down )
+
+        'neighbor_swing' => %w(improper improper_progressed side_of_set_with_neighbor_ones_facing_up side_of_set_with_neighbor_ones_facing_down),
+
+        'dancers_on_left_right_shoulder_round_one_and_a_half' => %w(improper improper_progressed becket opposite_becket side_of_set_with_neighbor_ones_facing_up side_of_set_with_neighbor_ones_facing_down long_lines_larks_facing_in_positive_slope_partner_on_same_side_ones_on_right long_lines_larks_facing_in_positive_slope_partner_on_same_side_ones_on_left long_lines_larks_facing_in_positive_slope_neighbor_on_same_side_ones_near_top long_lines_larks_facing_in_positive_slope_neighbor_on_same_side_ones_near_bottom long_lines_ravens_facing_in_positive_slope_partner_on_same_side_ones_on_right long_lines_ravens_facing_in_positive_slope_partner_on_same_side_ones_on_left long_lines_ravens_facing_in_positive_slope_neighbor_on_same_side_ones_near_top long_lines_ravens_facing_in_positive_slope_neighbor_on_same_side_ones_near_bottom),
+
+        'partner_swing' => %w(becket opposite_becket long_lines_larks_facing_in_negative_slope_partner_on_same_side_ones_on_right long_lines_larks_facing_in_negative_slope_partner_on_same_side_ones_on_left long_lines_larks_facing_in_positive_slope_partner_on_same_side_ones_on_right long_lines_larks_facing_in_positive_slope_partner_on_same_side_ones_on_left long_lines_ravens_facing_in_negative_slope_partner_on_same_side_ones_on_right long_lines_ravens_facing_in_negative_slope_partner_on_same_side_ones_on_left long_lines_ravens_facing_in_positive_slope_partner_on_same_side_ones_on_right long_lines_ravens_facing_in_positive_slope_partner_on_same_side_ones_on_left short_wavy_lines_ravens_in_middle_ones_on_right short_wavy_lines_ravens_in_middle_ones_on_left short_wavy_lines_larks_in_middle_ones_on_right short_wavy_lines_larks_in_middle_ones_on_left short_wavy_lines_r_orient_ones_on_left_raven_one_facing_up        short_wavy_lines_r_orient_ones_on_left_raven_one_facing_down        short_wavy_lines_r_orient_ones_on_right_raven_one_facing_down        short_wavy_lines_r_orient_ones_on_right_raven_one_facing_down       short_wavy_lines_s_orient_ones_on_left_raven_one_facing_up short_wavy_lines_s_orient_ones_on_left_raven_one_facing_down short_wavy_lines_s_orient_ones_on_right_raven_one_facing_down short_wavy_lines_s_orient_ones_on_right_raven_one_facing_down),
+
+        'circle_left_three_quarters' => %w(improper improper_progressed becket opposite_becket side_of_set_with_neighbor_ones_facing_up side_of_set_with_neighbor_ones_facing_down),
+
+        'partner_balance' => %w(becket opposite_becket long_lines_larks_facing_in_negative_slope_partner_on_same_side_ones_on_right long_lines_larks_facing_in_negative_slope_partner_on_same_side_ones_on_left long_lines_larks_facing_in_positive_slope_partner_on_same_side_ones_on_right long_lines_larks_facing_in_positive_slope_partner_on_same_side_ones_on_left long_lines_ravens_facing_in_negative_slope_partner_on_same_side_ones_on_right long_lines_ravens_facing_in_negative_slope_partner_on_same_side_ones_on_left long_lines_ravens_facing_in_positive_slope_partner_on_same_side_ones_on_right long_lines_ravens_facing_in_positive_slope_partner_on_same_side_ones_on_left short_wavy_lines_ravens_in_middle_ones_on_right short_wavy_lines_ravens_in_middle_ones_on_left short_wavy_lines_larks_in_middle_ones_on_right short_wavy_lines_larks_in_middle_ones_on_left short_wavy_lines_r_orient_ones_on_left_raven_one_facing_up        short_wavy_lines_r_orient_ones_on_left_raven_one_facing_down        short_wavy_lines_r_orient_ones_on_right_raven_one_facing_down        short_wavy_lines_r_orient_ones_on_right_raven_one_facing_down       short_wavy_lines_s_orient_ones_on_left_raven_one_facing_up short_wavy_lines_s_orient_ones_on_left_raven_one_facing_down short_wavy_lines_s_orient_ones_on_right_raven_one_facing_down short_wavy_lines_s_orient_ones_on_right_raven_one_facing_down),
+
+        'california_twirl' => %w(improper improper_progressed becket opposite_becket side_of_set_with_neighbor_ones_facing_up side_of_set_with_neighbor_ones_facing_down),
       }
+
       moves_and_possible_start_positions.each do |move, possible_positions|
         possible_positions.each do |position|
           PossibleMoveStartPosition.create!(position_id: position.id, move_id: move.id)
