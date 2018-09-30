@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     get 'next-moves' => 'moves#available_next'
 
     resources :positions, only: [:index]
+    resource :position, only: [:show]
 
 end
