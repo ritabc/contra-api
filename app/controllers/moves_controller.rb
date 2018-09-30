@@ -4,8 +4,4 @@ class MovesController < ApplicationController
     json_response(@moves)
   end
 
-  private
-  def json_response(object)
-    render json: object, status: :ok
-  end
 end
