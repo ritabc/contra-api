@@ -4,4 +4,9 @@ class MovesController < ApplicationController
     json_response(@moves)
   end
 
+  def index
+    @moves = Move.all
+    json_response(@moves)
+  end
+
 end
