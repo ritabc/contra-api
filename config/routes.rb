@@ -12,4 +12,6 @@ Rails.application.routes.draw do
     resources :positions, only: [:index]
     resource :position, only: [:show]
 
+    resources :dances, only: [:index, :show]
+
 end
