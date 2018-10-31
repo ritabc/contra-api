@@ -21,10 +21,10 @@ class Dance < ApplicationRecord
 
 
   def get_formation_and_moves
-    @formation_moves = {:is_becket => self.is_becket, :moves => []}
+    @dance_info = {:is_becket => self.is_becket, :moves => [], :name => self.name, :writer => self.writer, :description => self.description}
     self.dance_moves.order(number_in_dance: :asc).each do |dance_move|
-      @formation_moves[:moves].push(dance_move.move)
+      @dance_info[:moves].push(dance_move.move)
     end
-    @formation_moves
+    @dance_info
   end
 end
