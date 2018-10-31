@@ -16,4 +16,6 @@ Rails.application.routes.draw do
 
     get 'dance-composition' => 'dance_moves#steps'
 
+    get 'info-for-animation' => 'dance_moves#formation_moves'
+
 end

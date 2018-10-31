@@ -19,4 +19,12 @@ class Dance < ApplicationRecord
     @moves_and_positions
   end
 
+
+  def get_formation_and_moves
+    @formation_moves = {:is_becket => self.is_becket, :moves => []}
+    self.dance_moves.order(number_in_dance: :asc).each do |dance_move|
+      @formation_moves[:moves].push(dance_move.move)
+    end
+    @formation_moves
+  end
 end
