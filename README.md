@@ -5,4 +5,5 @@ An API for a contra dance website. See https://github.com/ritabc/contra-frontend
 
 ## TODO:
 - research Swagger for documentation
-- Get hosted
+- Get API hosted
+- Implement error handling better (go through lhtp.com's tutorials)
