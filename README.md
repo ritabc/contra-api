@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+An API for a contra dance website. See https://github.com/ritabc/contra-frontend for the Angular frontend which pairs with this app. Built as a capstone project for Epicodus Ruby on Rails track, October 2018
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## TODO:
+- research Swagger for documentation
+- Get hosted
