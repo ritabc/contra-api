@@ -134,7 +134,7 @@ class Seed
   end
 
   def populate_dance_move_data_for_heartbeat_contra
-    dance = Dance.create!(name: 'Heartbeat Contra', writer: 'Don Flaherty', is_becket: false)
+    dance = Dance.create!(name: 'Heartbeat Contra', writer: 'Don Flaherty', is_becket: false, out_couples_waiting_position: "improper")
     dance_moves_and_ending_positions = [ ## this needs to be an array of arrays so I can use the index to update number_in_dance
       ['balance_the_ring', 'improper'],
       ['petronella', 'opposite_becket'],
