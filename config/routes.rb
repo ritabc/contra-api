@@ -18,4 +18,5 @@ Rails.application.routes.draw do
 
     get 'info-for-animation' => 'dance_moves#formation_moves'
 
+
 end
