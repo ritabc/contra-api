@@ -6,10 +6,10 @@ class DanceMovesController < ApplicationController
     json_response(@moves_and_positions)
   end
 
-  def formation_moves
-    dance = Dance.find(params['dance_id'])
-    @is_becket_and_moves = dance.get_formation_and_moves
-    json_response(@is_becket_and_moves)
-  end
-
 end
+
+# def formation_moves
+#   dance = Dance.find(params['dance_id'])
+#   @is_becket_and_moves = dance.get_formation_and_moves
+#   json_response(@is_becket_and_moves)
+# end
