@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_17_183736) do
+ActiveRecord::Schema.define(version: 2019_01_18_180829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2018_12_17_183736) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "ending_position_id"
+    t.boolean "is_progression"
     t.index ["dance_id"], name: "index_dance_moves_on_dance_id"
     t.index ["move_id"], name: "index_dance_moves_on_move_id"
   end
