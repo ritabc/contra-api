@@ -14,8 +14,6 @@ Rails.application.routes.draw do
 
     resources :dances, only: [:index, :show]
 
-    get 'dance-composition' => 'dance_moves#steps'
+    get 'dance-moves-info' => 'dance_moves#get_dance_moves_information'
 
 end
-
-# get 'info-for-animation' => 'dance_moves#formation_moves'

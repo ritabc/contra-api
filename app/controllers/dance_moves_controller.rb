@@ -1,9 +1,18 @@
 class DanceMovesController < ApplicationController
 
-  def steps
-    dance = Dance.find(params['dance_id'])
-    @moves_and_positions = dance.get_moves_and_positions
-    json_response(@moves_and_positions)
+  def get_dance_moves_information
+    @dance = Dance.find(params['dance_id'])
+    @angular_dance_moves = []
+
+    @dance.dance_moves.order(number_in_dance: :asc).each do |d_m|
+      angular_dance_move = {:move => d_m.move, :endingPosition => d_m.position, :isProgression => d_m.is_progression}
+      @angular_dance_moves.push(angular_dance_move)
+    end
+
+    # return angular_dance_moves: an array of 'danceMoves; which are portions of dance_moves - each will include ONLY the Move (same in Rails & Ang), the ending Position (same in Rails & Ang), and isProgression boolean
+    # will not include: number_in_dance
+    ## Probably a good place for serialization (down the line)
+    json_response(@angular_dance_moves)
   end
 
 end
