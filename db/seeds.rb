@@ -154,25 +154,40 @@ class Seed
       position_this_move_ends_at = Position.find_by(description: move_ending_position_pair[1])
 
       dance_move = DanceMove.new(
+
+        # Attributes we can assign right-away:
         dance_id: dance.id,
         move_id: move.id,
-        number_in_dance: index
+        number_in_dance: index,
+        is_progression: false
+
+        # Attributes we can assign later:
+        # ending_position, is_progression for actual progression move
       )
 
-      ## don't really need to validate that this move's end is a possible start positions for the next move, because they should only be able to choose possible next move starting positions. But for these purposes, to ensure I'm hard-coding correctly,
+      ## don't really need to validate that this move's end is a possible start positions for the next move, because they should only be able to choose possible next move starting positions.
+      ### However, for these purposes, to ensure I'm hard-coding correctly, we need validate whether this move ends at an approp. position for the next move to start
 
-      ## First, find the next move
+      ### So, find the next_move
+      ## If this is the last move/position combo, wrap around
       if index == dance_moves_and_ending_positions.length - 1
         next_move = Move.find_by(name: dance_moves_and_ending_positions[0])
+
+        # Also, Assign is_progression attribute to true for proper move
+        ## (For Heartbeat, it happens to be the last move)
+        dance_move.is_progression = true
+
       else
         next_move = Move.find_by(name: dance_moves_and_ending_positions[index + 1])
       end
 
-      # if this move's ending position is listed in the next moves list of possible start positions, we're good to go
-
+      # check: if this move's ending position is listed in the next moves list of possible start positions, we're good to go
       if next_move.positions.include?(position_this_move_ends_at)
         dance_move.assign_attributes(ending_position_id: position_this_move_ends_at.id)
       end
+
+
+
 
       dance_move.save
     end
